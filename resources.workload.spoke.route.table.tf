@@ -31,7 +31,7 @@ resource "azurerm_route" "force_internet_tunneling" {
   address_prefix         = "0.0.0.0/0"
   next_hop_type          = "VirtualAppliance"
   next_hop_in_ip_address = var.hub_firewall_private_ip_address
-  
+
   count = var.enable_forced_tunneling_on_route_table ? 1 : 0
 }
 

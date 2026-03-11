@@ -30,4 +30,4 @@ data "azurenoopsutils_resource_name" "private_service_connection" {
   clean_input = true
   separator   = "-"
 }
- 
+

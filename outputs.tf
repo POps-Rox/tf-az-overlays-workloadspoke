@@ -97,12 +97,12 @@ output "route_table_id" {
 
 output "private_dns_zone_names" {
   description = "The name of the Private DNS zones within Azure DNS"
-  value       = [for s in module.mod_pdz : s.private_dns_zone_name] 
+  value       = [for s in module.mod_pdz : s.private_dns_zone_name]
 }
 
 output "private_dns_zone_ids" {
   description = "The resource id of Private DNS zones within Azure DNS"
-  value       = [for s in module.mod_pdz : s.private_dns_zone_id] 
+  value       = [for s in module.mod_pdz : s.private_dns_zone_id]
 }
 
 output "storage_account_id" {

@@ -5,7 +5,7 @@
 # Hub Logging Storage Account Creation
 #----------------------------------------------------------
 module "wl_storage_account_spoke" {
-  depends_on = [ module.mod_scaffold_rg ]
+  depends_on                   = [module.mod_scaffold_rg]
   source                       = "azurenoops/overlays-storage-account/azurerm"
   version                      = "~> 1.0"
   existing_resource_group_name = local.resource_group_name
