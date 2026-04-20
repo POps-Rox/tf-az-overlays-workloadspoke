@@ -1,6 +1,6 @@
-# Azure NoOps Management Spoke with all features deployed to Azure Government
+# Azure POps-Rox Management Spoke with all features deployed to Azure Government
 
-This example is to create a Azure NoOps Management Spoke, with additional features.
+This example is to create a Azure POps-Rox Management Spoke, with additional features.
 
 ```hcl
 # Azure Provider configuration
@@ -9,7 +9,7 @@ provider "azurerm" {
 }
 
 module "mod_vnet_spoke" {
-  source  = "azurenoops/overlays-management-spoke/azurerm"
+  source  = "POps-Rox/overlays-management-spoke/azurerm"
   version = "~> 2.0"
 
   # By default, this module will create a resource group, provide the name here
