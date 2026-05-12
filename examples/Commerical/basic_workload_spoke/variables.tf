@@ -75,6 +75,7 @@ variable "id_vnet_address_space" {
 }
 
 variable "id_subnets" {
+  type        = any
   description = "The subnets of the operations virtual network."
   default     = {}
 }
