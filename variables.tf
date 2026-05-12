@@ -64,16 +64,19 @@ variable "existing_resource_group_name" {
 #####################################
 
 variable "enable_private_endpoint" {
+  type        = bool
   description = "Manages a Private Endpoint to Azure Container Registry. Default is false."
   default     = false
 }
 
 variable "existing_private_dns_zone" {
+  type        = any
   description = "Name of the existing private DNS zone"
   default     = null
 }
 
 variable "private_subnet_address_prefix" {
+  type        = any
   description = "The name of the subnet for private endpoints"
   default     = null
 }
@@ -85,11 +88,13 @@ variable "create_private_endpoint_subnet" {
 }
 
 variable "existing_private_subnet_name" {
+  type        = any
   description = "Name of the existing subnet for the private endpoint"
   default     = null
 }
 
 variable "virtual_network_name" {
+  type        = any
   description = "Name of the virtual network for the private endpoint"
   default     = null
 }
@@ -99,31 +104,37 @@ variable "virtual_network_name" {
 #####################################
 
 variable "hub_virtual_network_name" {
+  type        = any
   description = "The name of hub virtual network"
   default     = null
 }
 
 variable "hub_firewall_private_ip_address" {
+  type        = any
   description = "The private IP of the hub virtual network firewall"
   default     = null
 }
 
 variable "hub_resource_group_name" {
+  type        = any
   description = "The name of hub resource group"
   default     = null
 }
 
 variable "log_analytics_workspace_id" {
+  type        = string
   description = "Specifies the id of the Log Analytics Workspace"
   default     = ""
 }
 
 variable "log_analytics_customer_id" {
+  type        = string
   description = "The Workspace (or Customer) ID for the Log Analytics Workspace."
   default     = ""
 }
 
 variable "log_analytics_logs_retention_in_days" {
+  type        = string
   description = "The log analytics workspace data retention in days. Possible values range between 30 and 730."
   default     = ""
 }

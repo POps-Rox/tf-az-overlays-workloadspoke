@@ -7,33 +7,33 @@
 
 output "resource_group_name" {
   description = "The name of the resource group in which resources are created"
-  value       = element(coalescelist(data.azurerm_resource_group.rgrp.*.name, module.mod_scaffold_rg.*.resource_group_name, [""]), 0)
+  value       = element(coalescelist(data.azurerm_resource_group.rgrp[*].name, module.mod_scaffold_rg[*].resource_group_name, [""]), 0)
 }
 
 output "resource_group_id" {
   description = "The id of the resource group in which resources are created"
-  value       = element(coalescelist(data.azurerm_resource_group.rgrp.*.id, module.mod_scaffold_rg.*.resource_group_id, [""]), 0)
+  value       = element(coalescelist(data.azurerm_resource_group.rgrp[*].id, module.mod_scaffold_rg[*].resource_group_id, [""]), 0)
 }
 
 output "resource_group_location" {
   description = "The location of the resource group in which resources are created"
-  value       = element(coalescelist(data.azurerm_resource_group.rgrp.*.location, module.mod_scaffold_rg.*.resource_group_location, [""]), 0)
+  value       = element(coalescelist(data.azurerm_resource_group.rgrp[*].location, module.mod_scaffold_rg[*].resource_group_location, [""]), 0)
 }
 
 # Vnet and Subnets
 output "virtual_network_name" {
   description = "The name of the virtual network"
-  value       = element(concat(azurerm_virtual_network.spoke_vnet.*.name, [""]), 0)
+  value       = element(concat(azurerm_virtual_network.spoke_vnet[*].name, [""]), 0)
 }
 
 output "virtual_network_id" {
   description = "The id of the virtual network"
-  value       = element(concat(azurerm_virtual_network.spoke_vnet.*.id, [""]), 0)
+  value       = element(concat(azurerm_virtual_network.spoke_vnet[*].id, [""]), 0)
 }
 
 output "virtual_network_address_space" {
   description = "List of address spaces that are used the virtual network."
-  value       = element(coalescelist(azurerm_virtual_network.spoke_vnet.*.address_space, [""]), 0)
+  value       = element(coalescelist(azurerm_virtual_network.spoke_vnet[*].address_space, [""]), 0)
 }
 
 output "subnet_ids" {
@@ -77,7 +77,7 @@ output "network_security_group_names" {
 # DDoS Protection Plan
 output "ddos_protection_plan_id" {
   description = "Ddos protection plan details"
-  value       = var.create_ddos_plan ? element(concat(azurerm_network_ddos_protection_plan.ddos.*.id, [""]), 0) : null
+  value       = var.create_ddos_plan ? element(concat(azurerm_network_ddos_protection_plan.ddos[*].id, [""]), 0) : null
 }
 
 output "network_watcher_id" {
