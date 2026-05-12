@@ -19,8 +19,14 @@ resource "azurerm_subnet" "default_snet" {
   virtual_network_name = azurerm_virtual_network.spoke_vnet.name
   address_prefixes     = each.value.address_prefixes
   service_endpoints    = lookup(each.value, "service_endpoints", [])
-  # Applicable to the subnets which used for Private link endpoints or services 
-  private_endpoint_network_policies_enabled     = lookup(each.value, "private_endpoint_network_policies_enabled", null)
+  # Applicable to the subnets which used for Private link endpoints or services
+  # azurerm 4.x replaced `private_endpoint_network_policies_enabled` (bool) with
+  # `private_endpoint_network_policies` (string enum: "Enabled" / "Disabled" /
+  # "NetworkSecurityGroupEnabled" / "RouteTableEnabled"). The module input variable
+  # remains `bool` for backward compatibility — converted here.
+  private_endpoint_network_policies = lookup(each.value, "private_endpoint_network_policies_enabled", null) == null ? null : (
+    lookup(each.value, "private_endpoint_network_policies_enabled") ? "Enabled" : "Disabled"
+  )
   private_link_service_network_policies_enabled = lookup(each.value, "private_link_service_network_policies_enabled", null)
 
   dynamic "delegation" {
