@@ -63,36 +63,42 @@ variable "existing_resource_group_name" {
 # Private Endpoint Configuration   ##
 #####################################
 
+# tflint-ignore: terraform_unused_declarations
 variable "enable_private_endpoint" {
   type        = bool
   description = "Manages a Private Endpoint to Azure Container Registry. Default is false."
   default     = false
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "existing_private_dns_zone" {
   type        = any
   description = "Name of the existing private DNS zone"
   default     = null
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "private_subnet_address_prefix" {
   type        = any
   description = "The name of the subnet for private endpoints"
   default     = null
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "create_private_endpoint_subnet" {
   description = "Controls if the subnet should be created. If set to false, the subnet name must be provided. Default is false."
   type        = bool
   default     = false
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "existing_private_subnet_name" {
   type        = any
   description = "Name of the existing subnet for the private endpoint"
   default     = null
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "virtual_network_name" {
   type        = any
   description = "Name of the virtual network for the private endpoint"
@@ -133,6 +139,7 @@ variable "log_analytics_customer_id" {
   default     = ""
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "log_analytics_logs_retention_in_days" {
   type        = string
   description = "The log analytics workspace data retention in days. Possible values range between 30 and 730."

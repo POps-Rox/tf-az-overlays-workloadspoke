@@ -8,7 +8,4 @@ locals {
   spoke_vnet_name     = coalesce(var.custom_spoke_virtual_network_name, data.popsrox_resource_name.vnet.result)
   spoke_rt_name       = coalesce(var.custom_spoke_route_table_name, data.popsrox_resource_name.rt.result)
   spoke_sa_name       = coalesce(var.custom_spoke_storage_account_name, data.popsrox_resource_name.st.result)
-
-  # DDOS Protection Plan
-  ddos_plan_name = coalesce(var.ddos_plan_custom_name, data.popsrox_resource_name.ddos.result)
 }
