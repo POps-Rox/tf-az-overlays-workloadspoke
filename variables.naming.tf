@@ -59,6 +59,7 @@ variable "custom_spoke_route_table_name" {
   default     = null
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "ddos_plan_custom_name" {
   description = "The name of the custom ddos protection plan to create. If not set, the name will be generated using the 'name_prefix' and 'name_suffix' variables. If set, the 'name_prefix' variable will be ignored."
   type        = string

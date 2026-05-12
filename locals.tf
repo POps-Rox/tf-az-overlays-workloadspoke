@@ -9,8 +9,6 @@
 # The following block of locals are used to avoid using
 # empty object types in the code
 locals {
-  empty_list   = []
-  empty_map    = tomap({})
   empty_string = ""
 }
 

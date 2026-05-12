@@ -26,18 +26,6 @@ variable "default_location" {
   default     = "eastus"
 }
 
-variable "default_tags" {
-  type        = map(string)
-  description = "If specified, will set the default tags for all resources deployed by this module where supported."
-  default     = {}
-}
-
-variable "disable_base_module_tags" {
-  type        = bool
-  description = "If set to true, will remove the base module tags applied to all resources deployed by the module which support tags."
-  default     = false
-}
-
 #################################
 # Resource Lock Configuration
 #################################
@@ -46,12 +34,6 @@ variable "enable_resource_locks" {
   type        = bool
   description = "If set to true, will enable resource locks for all resources deployed by this module where supported."
   default     = false
-}
-
-variable "lock_level" {
-  description = "The level of lock to apply to the resources. Valid values are CanNotDelete, ReadOnly, or NotSpecified."
-  type        = string
-  default     = "CanNotDelete"
 }
 
 ################################

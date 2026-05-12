@@ -30,6 +30,7 @@ variable "dns_servers" {
   default     = []
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "create_network_watcher" {
   type        = bool
   description = "Controls if Network Watcher resources should be created for the Azure subscription"
